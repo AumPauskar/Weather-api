@@ -1,6 +1,6 @@
 import requests
 import os
-from datetime import datetime
+import time
 
 KC = 273.15
 
@@ -24,4 +24,6 @@ else:
 	humidity = data['main']['humidity']
 	pressure = data['main']['pressure']
 	visibility = data['visibility']
-	print(coord, weather_description, temp, feels_like, temp_min, temp_max, humidity, pressure, visibility)
+	curdate = time.strftime('%Y/%m/%d')
+	curtime = time.strftime('%H:%M:%S')
+	print(coord, weather_description, temp, feels_like, temp_min, temp_max, humidity, pressure, visibility, curdate, curtime)
