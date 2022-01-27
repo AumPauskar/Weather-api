@@ -1,0 +1,1 @@
+while loop is psudofunctional hence only works one time
