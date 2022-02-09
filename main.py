@@ -8,7 +8,7 @@ import json
 # programming constants
 # csv data
 csv_filename = 'weatherdata.csv'
-fields = ['No.', 'Coordinates', 'Temperature', 'Feels', 'Max', 'Min', 'Description', 'Humidity', 'Pressure', 'Visibility']
+fields = ['No.', 'Time', 'Coordinates', 'Temperature', 'Feels', 'Min', 'Max', 'Description', 'Humidity', 'Pressure', 'Visibility']
 with open(csv_filename, 'w') as csvfile:
 	csvwriter = csv.writer(csvfile)
 	csvwriter.writerow(fields)
@@ -30,6 +30,8 @@ if data['coord'] == 404:
 else:
 	while lever == 1:
 		print("City found on the database")
+		srno = 1
+		curtime = time.strftime('%Y/%m/%d %H:%M:%S')
 		coord = str(data['coord']['lat'])+', '+str(data['coord']['lon'])
 		weather_description = data['weather'][0]['description']
 		temp = (data['main']['temp'])-kc
@@ -39,8 +41,11 @@ else:
 		humidity = data['main']['humidity']
 		pressure = data['main']['pressure']
 		visibility = data['visibility']
-		values = [coord, weather_description, temp, feels_like, temp_min, temp_max, humidity, pressure, visibility]
+		values = [srno, curtime, coord, temp, feels_like, temp_min, temp_max, weather_description, humidity, pressure, visibility]
+
+		# will print out the values in the csv file append function
 		with open(csv_filename, 'a') as csvfile:
 			csvwriter = csv.writer(csvfile)
 			csvwriter.writerow(values)
+		print('Data written to CSV file')
 		lever = 0
