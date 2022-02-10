@@ -2,11 +2,6 @@
 import requests
 import os
 import time
-<<<<<<< HEAD
-=======
-import csv
-import json
->>>>>>> f9b1b300f92faec2043c442eee10f59364d0776f
 
 # programming constants
 # csv data
