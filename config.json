@@ -1,0 +1,6 @@
+{
+	"_comment-help": "Help notes are labeled as shown here you can see the tag starting with a _",
+
+	"mode-help": "Can set to csv mode or can take a normal text output. Options: csv/text",
+	"mode-tag": "csv"
+}
